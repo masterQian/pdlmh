@@ -1,0 +1,276 @@
+{
+	Type: Group, Name: PageTree, Comment: 版面2-目录树,
+	Left: 5, Top: 100, Width: 435, Height: 400,
+	Skin: @Skin.Group, Visual: false,
+	Children: [
+	{
+		Type: IconList, Name: TreeTab, Comment: 目录树快捷按钮,
+		Left: 0, Top: 0, Width: 435, Height: 32,
+		ItemWidth: 140, ItemHeight: 32, IconWidth: 24, IconHeight: 24,
+		HSpace: 5, VSpace: 0, ScrollBarMode: 17,
+		Font: @Font.MSBlack.SL14, Skin: @Skin.IconList,
+		CallBack: @CallBack.TreeButton,
+		Data: [
+			[返回上一级, @Icon.Tree.Return, @Color.White],
+			[新建文件夹, @Icon.Tree.NewFolder, @Color.White],
+			[定位桌面目录, @Icon.Tree.Desktop, @Color.White]
+		]
+	},
+	{
+		Type: IconList, Name: TreeList, Comment: 目录树列表,
+		Left: 0, Top: 32, Width: 435, Height: 368,
+		ItemWidth: 85, ItemHeight: 85, IconWidth: 32, IconHeight: 32,
+		HSpace: 0, VSpace: 0, ScrollBarMode: 17, IconUp: true,
+		Font: @Font.MSBlack.S14, Skin: @Skin.IconList2,
+		CallBack: @CallBack.TreeList
+	},
+	{
+		Type: Group, Name: 0, Comment: 驱动器属性,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: IconButton, Comment: 关闭按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Close, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.CancelProperty
+		},
+		{
+			Type: Picture, Name: DriveIcon,
+			Left: 20, Top: 20, Width: 48, Height: 48,
+			Skin: @Skin.Picture, MapMode: 1
+		},
+		{
+			Type: Label, Name: DriveName, Align: 10,
+			Left: 100, Top: 34, Width: 330, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: DriveFileSystem, Align: 10,
+			Left: 20, Top: 80, Width: 280, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: DriveType, Align: 10,
+			Left: 20, Top: 120, Width: 280, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: DriveTotalSize, Align: 10,
+			Left: 20, Top: 160, Width: 280, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: DriveFreeSize, Align: 10,
+			Left: 20, Top: 200, Width: 280, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Progress, Name: DriveProgress,
+			Left: 300, Top: 100, Width: 120, Height: 120,
+			Style: 1, MinPos: 0, MaxPos: 100,
+			Skin: @Skin.Progress
+		}
+		]
+	},
+	{
+		Type: Group, Name: 1, Comment: 文件属性,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: IconButton, Comment: 关闭按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Close, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.CancelProperty
+		},
+		{
+			Type: Picture, Name: FileIcon,
+			Left: 20, Top: 20, Width: 32, Height: 32,
+			Skin: @Skin.Picture, MapMode: 1
+		},
+		{
+			Type: Label, Name: FileName, Align: 10,
+			Left: 75, Top: 26, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 文件路径:, Align: 10,
+			Left: 20, Top: 80, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 文件大小:, Align: 10,
+			Left: 20, Top: 130, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 创建时间:, Align: 10,
+			Left: 20, Top: 170, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 修改时间:, Align: 10,
+			Left: 20, Top: 210, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 访问时间:, Align: 10,
+			Left: 20, Top: 250, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FilePath, Align: 1,
+			Left: 110, Top: 70, Width: 325, Height: 40,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileSize, Align: 10,
+			Left: 110, Top: 130, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileCreateTime, Align: 10,
+			Left: 110, Top: 170, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileModifyTime, Align: 10,
+			Left: 110, Top: 210, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileAccessTime, Align: 10,
+			Left: 110, Top: 250, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		}
+		]
+	},
+	{
+		Type: Group, Name: 2, Comment: 目录属性,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: IconButton, Comment: 关闭按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Close, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.CancelProperty
+		},
+		{
+			Type: Picture, Name: FileIcon,
+			Left: 20, Top: 20, Width: 32, Height: 32,
+			Skin: @Skin.Picture, MapMode: 1
+		},
+		{
+			Type: Label, Name: FileName, Align: 10,
+			Left: 75, Top: 26, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 目录路径:, Align: 10,
+			Left: 20, Top: 80, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 包含内容:, Align: 10,
+			Left: 20, Top: 130, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 目录大小:, Align: 10,
+			Left: 20, Top: 170, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 创建时间:, Align: 10,
+			Left: 20, Top: 210, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 修改时间:, Align: 10,
+			Left: 20, Top: 250, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 访问时间:, Align: 10,
+			Left: 20, Top: 290, Width: 80, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FilePath, Align: 1,
+			Left: 110, Top: 70, Width: 325, Height: 40,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileContain, Align: 10,
+			Left: 110, Top: 130, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileSize, Align: 10,
+			Left: 110, Top: 170, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileCreateTime, Align: 10,
+			Left: 110, Top: 210, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileModifyTime, Align: 10,
+			Left: 110, Top: 250, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: Label, Name: FileAccessTime, Align: 10,
+			Left: 110, Top: 290, Width: 325, Height: 20,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		}
+		]
+	},
+	{
+		Type: Group, Name: PreviewTextFile,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: Edit, Name: text,
+			Left: 0, Top: 30, Width: 435, Height: 370,
+			MultiLine: true, AutoLine: true, Skin: @Skin.Edit,
+			NoMenu: true, InputMode: 1,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		},
+		{
+			Type: IconButton, Comment: 关闭按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Close, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.CancelProperty
+		}
+		]
+	},
+	{
+		Type: Group, Name: PreviewImageFile,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: Picture, Name: image,
+			Left: 0, Top: 30, Width: 435, Height: 370,
+			Skin: @Skin.Picture, MapMode: 2
+		},
+		{
+			Type: IconButton, Comment: 关闭按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Close, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.CancelProperty
+		}
+		]
+	}
+	]
+}

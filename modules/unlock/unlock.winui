@@ -1,0 +1,27 @@
+{
+	Name: unlock, Title: 文件解锁(拖拽文件或目录),
+	Left: @Position.Left, Top: @Position.Top, Width: 300, Height: 250,
+	CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	Font: @Font.MSBlack.S16, FontColor: @Color.White,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Switch, CallBack: @CallBack.Switch,
+		Left: 5, Top: 30, Width: 60, Height: 30
+	},
+	{
+		Type: Label, Title: 解锁进程模式/结束进程模式,
+		Left: 70, Top: 30, Width: 230, Height: 30,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White
+	},
+	{
+		Type: Edit, Name: edit,
+		Left: 0, Top: 70, Width: 300, Height: 180,
+		MultiLine: true, AutoLine: true,
+		InputMode: 1, CursorColor: @Color.White,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White,
+		NoMenu: true, Skin: @Skin.Edit
+	}
+	]
+}

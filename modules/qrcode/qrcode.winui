@@ -1,0 +1,22 @@
+{
+	Name: qrcode, Title: 二维码生成,
+	Left: @Position.Left, Top: @Position.Top, Width: 300, Height: 360,
+	CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	Font: @Font.MSBlack.S16, FontColor: @Color.White,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Edit, NoMenu: true,
+		Left: 0, Top: 30, Width: 300, Height: 30,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White,
+		CursorColor: @Color.White, Skin: @Skin.Edit,
+		CallBack: @CallBack.Edit
+	},
+	{
+		Type: Picture, Name: picture, CallBack: @CallBack.Pic,
+		Left: 0, Top: 60, Width: 300, Height: 300,
+		MapMode: 1, Skin: @Skin.Picture
+	}
+	]
+}

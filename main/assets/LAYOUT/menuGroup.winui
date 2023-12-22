@@ -1,0 +1,20 @@
+{
+	Skin: @Skin.Menu, Comment: 分组菜单,
+	CallBack: @CallBack.MenuGroup,
+	IconWidth: 24, IconHeight: 24,
+	ChildWidth: 85, Font: @Font.MSBlack.SL16,
+	Items: [
+	{
+		Tag: 0, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Delete, Title: 删除, FontColor: @Color.White
+	},
+	{
+		Tag: 1, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Left, Title: 上移, FontColor: @Color.White
+	},
+	{
+		Tag: 2, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Right, Title: 下移, FontColor: @Color.White
+	}
+	]
+}

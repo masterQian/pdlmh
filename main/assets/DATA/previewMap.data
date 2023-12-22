@@ -1,0 +1,6 @@
+{
+	.txt: 0, .log: 0, .ini: 0, .json: 0, .h: 0, .c: 0, .cpp: 0, .java: 0,
+	.py: 0, .html: 0, .js: 0, .css: 0, .xml: 0, .dat: 0, .bat: 0,
+
+	.ico: 1, .jpg: 1, .jpeg: 1, .png: 1, .bmp: 1
+}

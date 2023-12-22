@@ -1,0 +1,15 @@
+{
+	.exe: 0,
+	.zip: 3, .rar: 3, .7z: 3,
+	.txt: 4, .log: 4, .ini: 4, .dat: 4,
+	.doc: 5, .docx: 5,
+	.xls: 6, .xlsx: 6,
+	.ppt: 7, .pptx: 7,
+	.pdf: 8,
+	.jpg: 9, .png: 9, .jpeg: 9, .bmp: 9, .gif: 9, .ico: 9, .webp: 9,
+	.mp3: 10, .wav: 10, .flac: 10,
+	.avi: 11, .flv: 11, .mp4: 11,
+	.html: 12, .htm: 12, .php: 12,
+	.xml: 13,
+	.apk: 14
+}

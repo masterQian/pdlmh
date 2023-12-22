@@ -1,0 +1,53 @@
+{
+	Name: MainWindow, Comment: 主窗口,
+	Left: -450, Top: 75, Width: 450, Height: 550,
+	DragMode: 0, CanMove: false, ControlButton: 0,
+	Transparency: 150, LayeredTransparency: 255,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Edit, Name: Search, Comment: 顶部搜索框,
+		Left: 5, Top: 10, Width: 435, Height: 35,
+		NoMenu: true, Font: @Font.MSBlack.SL16,
+		FontColor: @Color.White, CursorColor: @Color.White,
+		CallBack: @CallBack.Search, Skin: @Skin.Edit,
+		LeftReservation: 30,
+		Children: [
+		{
+			Type: Picture, Comment: 搜索框左侧图标,
+			Left: 6, Top: 6, Width: 24, Height: 24,
+			Image: @Image.Search, MapMode: 1, Skin: @Skin.Picture
+		}
+		]
+	},
+	{
+		Type: IconList, Name: Tab, Comment: 顶部版面栏,
+		Left: 5, Top: 55, Width: 435, Height: 35,
+		ItemWidth: 100, ItemHeight: 35, IconWidth: 24, IconHeight: 24,
+		HSpace: 5, VSpace: 5, ScrollBarMode: 17,
+		Font: @Font.MSBlack.SL14, Skin: @Skin.IconList,
+		CallBack: @CallBack.Tab, CurrentItem: 0,
+		Data: [
+			[程序, @Icon.Tab.Start, @Color.White],
+			[系统, @Icon.Tab.Tool, @Color.White],
+			[目录, @Icon.Tab.Folder, @Color.White],
+			[插件, @Icon.Tab.Plugin, @Color.White],
+			[文件, @Icon.Tab.File, @Color.White]
+		]
+	},
+	{
+		Type: Group, Name: GroupStatus, Comment: 底部状态栏,
+		Left: 5, Top: 510, Width: 435, Height: 30,
+		Skin: @Skin.Group,
+		Children: [
+		{
+			Type: IconButton, Name: Settings, Comment: 设置按钮,
+			Left: 400, Top: 0, Width: 30, Height: 30,
+			IconWidth: 24, IconHeight: 24,
+			Icon: @Image.Settings, Skin: @Skin.IconButton2,
+			CallBack: @CallBack.OpenSettings
+		}
+		]
+	}
+	]
+}

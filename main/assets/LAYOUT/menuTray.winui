@@ -1,0 +1,12 @@
+{
+	Skin: @Skin.Menu, Comment: 托盘菜单,
+	CallBack: @CallBack.MenuTray,
+	IconWidth: 24, IconHeight: 24,
+	ChildWidth: 85, Font: @Font.MSBlack.SL16,
+	Items: [
+	{
+		Tag: 0, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Exit, Title: 退出, FontColor: @Color.White
+	}
+	]
+}

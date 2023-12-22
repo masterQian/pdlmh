@@ -1,0 +1,15 @@
+{
+	Type: Group, Name: PageSystem, Comment: 版面1-系统,
+	Left: 5, Top: 100, Width: 435, Height: 400,
+	Skin: @Skin.Group, Visual: false,
+	Children: [
+	{
+		Type: IconList, Name: List, Comment: 系统工具列表,
+		Left: 5, Top: 0, Width: 435, Height: 400,
+		ItemWidth: 80, ItemHeight: 80, IconWidth: 40, IconHeight: 40,
+		HSpace: 5, VSpace: 10, ScrollBarMode: 17, IconUp: true,
+		Font: @Font.MSBlack.S12, Skin: @Skin.IconList,
+		CallBack: @CallBack.SystemList
+	}
+	]
+}

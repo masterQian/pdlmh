@@ -1,0 +1,197 @@
+{
+	Name: SettingsWindow, Comment: 设置窗口,
+	Left: @Position.Left, Top: @Position.Top, Width: 630, Height: 470,
+	DragMode: 1, CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: IconList, Name: Tab, Comment: Tab分组栏,
+		Left: 0, Top: 50, Width: 120, Height: 400,
+		ItemWidth: 110, ItemHeight: 40, IconWidth: 24, IconHeight: 24,
+		HSpace: 5, VSpace: 5, ScrollBarMode: 17,
+		Font: @Font.MSBlack.S16, Skin: @Skin.IconList,
+		CallBack: @CallBack.SettingsTab, CurrentItem: 0,
+		Data: [
+			[通用, , @Color.White],
+			[拓展, , @Color.White],
+			[关于, , @Color.White],
+			[新功能, , @Color.White]
+		]
+	},
+	{
+		Type: Group, Name: Normal, Comment: 通用页面,
+		Left: 150, Top: 50, Width: 450, Height: 400,
+		Skin: @Skin.Group, Visual: true,
+		Children: [
+		{
+			Type: Choice, Name: AutoStart, Title: 开机启动,
+			Left: 15, Top: 15, Width: 100, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Select: @Value.AutoStart, Skin: @Skin.Choice,
+			CallBack: @CallBack.SettingsChoice
+		},
+		{
+			Type: Choice, Name: ListWave, Title: 悬浮列表动效,
+			Left: 130, Top: 15, Width: 130, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Select: @Value.ListWave, Skin: @Skin.Choice,
+			CallBack: @CallBack.SettingsChoice
+		},
+		{
+			Type: Choice, Name: GroundGlass, Title: 窗口毛玻璃特效,
+			Left: 275, Top: 15, Width: 160, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Select: @Value.GroundGlass, Skin: @Skin.Choice,
+			CallBack: @CallBack.SettingsChoice
+		},
+		{
+			Type: Label, Title: 特效速率,
+			Left: 15, Top: 50, Width: 72, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Slider, Name: EffectSpeed,
+			Left: 90, Top: 45, Width: 180, Height: 32,
+			Pos: @Value.EffectSpeed, MinPos: 2, MaxPos: 10,
+			Skin: @Skin.Slider, CallBack: @CallBack.SettingsSlider
+		},
+		{
+			Type: Label, Title: 主题颜色,
+			Left: 15, Top: 88, Width: 72, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: ColorPick, Name: BackGroundColor,
+			Left: 98, Top: 86, Width: 250, Height: 100,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			RegulatorHeight: 25, Skin: @Skin.ColorPick,
+			useRGB: true, CurrentColor: @Value.BackGroundColor,
+			CallBack: @CallBack.SettingsColorPick
+		},
+		{
+			Type: Label, Title: 搜索引擎,
+			Left: 15, Top: 195, Width: 72, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Group, Name: SearchEngine,
+			Left: 100, Top: 195, Width: 360, Height: 24,
+			Skin: @Skin.Group,
+			Children: [
+			{
+				Type: Radio, Name: 0, Title: 无,
+				Left: 0, Top: 0, Width: 90, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.SearchEngine.Null, CallBack: @CallBack.SettingsRadio
+			},
+			{
+				Type: Radio, Name: 1, Title: 百度,
+				Left: 90, Top: 0, Width: 90, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.SearchEngine.Baidu, CallBack: @CallBack.SettingsRadio
+			},
+			{
+				Type: Radio, Name: 2, Title: 必应,
+				Left: 180, Top: 0, Width: 90, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.SearchEngine.Bing, CallBack: @CallBack.SettingsRadio
+			},
+			{
+				Type: Radio, Name: 3, Title: 谷歌,
+				Left: 270, Top: 0, Width: 90, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.SearchEngine.Google, CallBack: @CallBack.SettingsRadio
+			}
+			]
+		}
+		]
+	},
+	{
+		Type: Group, Name: Extends, Comment: 拓展页面,
+		Left: 150, Top: 50, Width: 450, Height: 400,
+		Skin: @Skin.Group, Visual: false,
+		Children: [
+		{
+			Type: Label, Title: 目录树过滤器,
+			Left: 0, Top: 5, Width: 100, Height: 24,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Group, Name: FolderTreeFilter,
+			Left: 10, Top: 30, Width: 390, Height: 24,
+			Skin: @Skin.Group,
+			Children: [
+			{
+				Type: Choice, Name: 4, Title: 系统,
+				Left: 0, Top: 0, Width: 70, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.FolderTreeFilter.System, Skin: @Skin.Choice,
+				CallBack: @CallBack.SettingsChoice
+			},
+			{
+				Type: Choice, Name: 2, Title: 隐藏,
+				Left: 80, Top: 0, Width: 70, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.FolderTreeFilter.Hide, Skin: @Skin.Choice,
+				CallBack: @CallBack.SettingsChoice
+			},
+			{
+				Type: Choice, Name: 160, Title: 普通,
+				Left: 160, Top: 0, Width: 70, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.FolderTreeFilter.Normal, Skin: @Skin.Choice,
+				CallBack: @CallBack.SettingsChoice
+			},
+			{
+				Type: Choice, Name: 16, Title: 目录,
+				Left: 240, Top: 0, Width: 70, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.FolderTreeFilter.Folder, Skin: @Skin.Choice,
+				CallBack: @CallBack.SettingsChoice
+			},
+			{
+				Type: Choice, Name: 1, Title: 只读,
+				Left: 320, Top: 0, Width: 70, Height: 24,
+				Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+				Select: @Value.FolderTreeFilter.ReadOnly, Skin: @Skin.Choice,
+				CallBack: @CallBack.SettingsChoice
+			}
+			]
+		}
+		]
+	},
+	{
+		Type: Group, Name: About, Comment: 关于页面,
+		Left: 150, Top: 50, Width: 450, Height: 400,
+		Skin: @Skin.Group, Visual: false,
+		Children: [
+		{
+			Type: plus::Record, Name: Record, Comment: Logo唱片,
+			Left: 175, Top: 0, Width: 100, Height: 100,
+			Image: @Image.Icon
+		},
+		{
+			Type: Label, Comment: 关于内容,
+			Left: 0, Top: 100, Width: 450, Height: 300,
+			Title: @Text.About, Align: 4,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		}
+		]
+	},
+	{
+		Type: Group, Name: Update, Comment: 新功能页面,
+		Left: 150, Top: 50, Width: 450, Height: 400,
+		Skin: @Skin.Group, Visual: false,
+		Children: [
+		{
+			Type: Edit, Comment: 新功能页面,
+			Left: 0, Top: 0, Width: 450, Height: 400,
+			MultiLine: true, AutoLine: true, Skin: @Skin.Edit,
+			NoMenu: true, InputMode: 1, Content: @Value.NewUpdate,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White
+		}
+		]
+	}
+	]
+}

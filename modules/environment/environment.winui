@@ -1,0 +1,29 @@
+{
+	Name: environment, Title: 环境变量,
+	Left: @Position.Left, Top: @Position.Top, Width: 800, Height: 550,
+	CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	Font: @Font.MSBlack.S16, FontColor: @Color.White,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: IconList,
+		Left: 0, Top: 30, Width: 500, Height: 30,
+		ItemWidth: 150, ItemHeight: 30, IconWidth: 0, IconHeight: 0,
+		HSpace: 5, VSpace: 0, ScrollBarMode: 17,
+		Font: @Font.MSBlack.S16, Skin: @Skin.IconList,
+		CallBack: @CallBack.Button, CurrentItem: 0,
+		Data: [
+			[系统环境变量, , @Color.Red],
+			[用户环境变量, , @Color.Red],
+			[Path路径, , @Color.Red]
+		]
+	},
+	{
+		Type: SuperList, Name: list,
+		Left: 0, Top: 60, Width: 800, Height: 490,
+		HeadHeight: 0, HeadMode: 0, LineMode: 0, ScrollBarMode: 17,
+		Skin: @Skin.SuperList2, CallBack: @CallBack.List
+	}
+	]
+}

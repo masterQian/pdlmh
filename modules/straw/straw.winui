@@ -1,0 +1,26 @@
+{
+	Name: straw, Title: 取色器,
+	Left: @Position.Left, Top: @Position.Top, Width: 400, Height: 280,
+	CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	Font: @Font.MSBlack.S16, FontColor: @Color.White,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Label, Name: CL,
+		Left: 6, Top: 32, Width: 84, Height: 192
+	},
+	{
+		Type: Label, Title: F2开关,
+		Left: 8, Top: 232, Width: 84, Height: 40,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White,
+		Align: 13
+	},
+	{
+		Type: SuperList, Name: SL,
+		Left: 96, Top: 33, Width: 300, Height: 240,
+		HeadHeight: 0, HeadMode: 0, LineMode: 0,
+		Skin: @Skin.SuperList2, CallBack: @CallBack.SL
+	}
+	]
+}

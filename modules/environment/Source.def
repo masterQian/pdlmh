@@ -1,0 +1,6 @@
+LIBRARY
+
+EXPORTS
+init @1
+destroy @2
+run @3

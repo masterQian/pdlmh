@@ -1,0 +1,20 @@
+{
+	Skin: @Skin.Menu, Comment: 插件菜单,
+	CallBack: @CallBack.MenuPlugin,
+	IconWidth: 24, IconHeight: 24,
+	ChildWidth: 135, Font: @Font.MSBlack.SL16,
+	Items: [
+	{
+		Tag: 0, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Able, Title: 启用, FontColor: @Color.White
+	},
+	{
+		Tag: 1, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Disable, Title: 禁用, FontColor: @Color.White
+	},
+	{
+		Tag: 2, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Folder, Title: 打开文件位置, FontColor: @Color.White
+	}
+	]
+}

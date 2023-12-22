@@ -1,0 +1,90 @@
+{
+	Type: Group, Name: PageProgram, Comment: 版面0-程序,
+	Left: 5, Top: 100, Width: 435, Height: 400,
+	Skin: @Skin.Group,
+	Children: [
+	{
+		Type: SuperList, Name: SLGroup, Comment: 分组超列框,
+		Left: 0, Top: 0, Width: 120, Height: 400,
+		HeadHeight: 0, HeadMode: 0, LineMode: 0,
+		Skin: @Skin.SuperList2, CallBack: @CallBack.SLGroup
+	},
+	{
+		Type: IconList, Name: SLItem, Comment: 项目列表框,
+		Left: 120, Top: 0, Width: 315, Height: 400,
+		ItemWidth: 78, ItemHeight: 78, IconWidth: 32, IconHeight: 32,
+		HSpace: 0, VSpace: 0, ScrollBarMode: 17, IconUp: true,
+		Font: @Font.MSBlack.S14, Skin: @Skin.IconList2,
+		CallBack: @CallBack.SLItem
+	},
+	{
+		Type: Group, Name: EditGroup, Comment: 编辑项目框,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		Visual: false, Skin: @Skin.Group,
+		Children: [
+		{
+			Type: Picture, Name: EditPic,
+			Left: 193, Top: 15, Width: 48, Height: 48,
+			MapMode: 1, Skin: @Skin.Picture
+		},
+		{
+			Type: Label, Title: 名称:, Align: 13,
+			Left: 20, Top: 80, Width: 48, Height: 20,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 路径:, Align: 13,
+			Left: 20, Top: 130, Width: 48, Height: 20,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Label, Title: 参数:, Align: 13,
+			Left: 20, Top: 175, Width: 48, Height: 20,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White
+		},
+		{
+			Type: Edit, Name: EditName, Comment: 名称编辑框,
+			Left: 75, Top: 75, Width: 340, Height: 30, NoMenu: true,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White,
+			CursorColor: @Color.White, Skin: @Skin.Edit,
+			LeftReservation: 5, RightReservation: 5
+		},
+		{
+			Type: Edit, Name: EditPath, Comment: 路径编辑框,
+			Left: 75, Top: 125, Width: 340, Height: 30,
+			NoMenu: true, InputMode: 1,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White,
+			CursorColor: @Color.White, Skin: @Skin.Edit,
+			LeftReservation: 5, RightReservation: 5
+		},
+		{
+			Type: Edit, Name: EditArg, Comment: 参数编辑框,
+			Left: 75, Top: 170, Width: 340, Height: 80,
+			NoMenu: true, MultiLine: true, AutoLine: true,
+			Font: @Font.MSBlack.S16, FontColor: @Color.White,
+			CursorColor: @Color.White, Skin: @Skin.Edit,
+			LeftReservation: 5, RightReservation: 5
+		},
+		{
+			Type: Choice, Name: ChoiceAdmin, Comment: 管理员身份选择框,
+			Left: 30, Top: 270, Width: 300, Height: 25,
+			Title: 以管理员身份运行,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Skin: @Skin.Choice
+		},
+		{
+			Type: Button, Name: 0, Title: 修改,
+			Left: 120, Top: 310, Width: 75, Height: 35,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Skin: @Skin.Button, CallBack: @CallBack.EditButton
+		},
+		{
+			Type: Button, Name: 1, Title: 取消,
+			Left: 250, Top: 310, Width: 75, Height: 35,
+			Font: @Font.MSBlack.SL14, FontColor: @Color.White,
+			Skin: @Skin.Button, CallBack: @CallBack.EditButton
+		}
+		]
+	}
+	]
+}

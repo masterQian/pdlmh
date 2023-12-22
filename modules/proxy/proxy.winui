@@ -1,0 +1,63 @@
+{
+	Name: proxy, Title: 代理服务器设置,
+	Left: @Position.Left, Top: @Position.Top, Width: 440, Height: 340,
+	CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	Font: @Font.MSBlack.S16, FontColor: @Color.White,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Label, Title: 使用代理服务器,
+		Left: 80, Top: 40, Width: 144, Height: 32,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White
+	},
+	{
+		Type: Label, Title: IP地址,
+		Left: 10, Top: 80, Width: 90, Height: 32,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White
+	},
+	{
+		Type: Label, Title: 端口,
+		Left: 270, Top: 80, Width: 60, Height: 32,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White
+	},
+	{
+		Type: Label, Title: 代理服务器屏蔽IP地址,
+		Left: 10, Top: 120, Width: 260, Height: 32,
+		Font: @Font.MSBlack.S16, FontColor: @Color.White
+	},
+	{
+		Type: Switch, Name: SB,
+		Left: 10, Top: 40, Width: 56, Height: 32,
+		Select: @Value.ProxyEnable, CallBack: @CallBack.SB
+	},
+	{
+		Type: Edit, Name: IP, Disabled: @Value.NotProxyEnable,
+		Left: 100, Top: 80, Width: 160, Height: 32,
+		Font: @Font.MSBlack.S16, Content: @Value.IP,
+		InputMode: 16384, MaxLen: 15, Skin: @Skin.Edit,
+		CursorColor: @Color.White, FontColor: @Color.White
+	},
+	{
+		Type: Edit, Name: Port, Disabled: @Value.NotProxyEnable,
+		Left: 330, Top: 80, Width: 90, Height: 32,
+		Font: @Font.MSBlack.S16, Content: @Value.Port,
+		InputMode: 16384, MaxLen: 5, Skin: @Skin.Edit,
+		CursorColor: @Color.White, FontColor: @Color.White
+	},
+	{
+		Type: Edit, Name: Block, Disabled: @Value.NotProxyEnable,
+		Left: 10, Top: 160, Width: 420, Height: 128,
+		Font: @Font.MSBlack.S16, Content: @Value.Override,
+		Skin: @Skin.Edit, ItemAlign: 0,
+		CursorColor: @Color.White, FontColor: @Color.White,
+		MultiLine: true, AutoLine: true
+	},
+	{
+		Type: Button, Title: 保存,
+		Left: 180, Top: 295, Width: 80, Height: 35,
+		Skin: @Skin.Button, Font: @Font.MSBlack.S16,
+		FontColor: @Color.White, CallBack: @CallBack.Button
+	}
+	]
+}

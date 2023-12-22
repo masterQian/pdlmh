@@ -1,0 +1,15 @@
+{
+	Name: ToastWindow, Comment: 提示窗口,
+	Left: @Position.Left, Top: @Position.Top, Width: 350, Height: 120,
+	DragMode: 0, CanMove: false, ControlButton: 4,
+	Transparency: 150, LayeredTransparency: 255,
+	GroundGlass: @Value.GroundGlass, Skin: @Skin.Window,
+	Children: [
+	{
+		Type: Label, Name: label, Comment: 提示内容标签,
+		Left: 15, Top: 25, Width: 320, Height: 90,
+		Title: @Value.Content, FontColor: @Color.White,
+		Font: @Font.MSBlack.SL16
+	}
+	]
+}

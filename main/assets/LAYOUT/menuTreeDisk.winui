@@ -1,0 +1,12 @@
+{
+	Skin: @Skin.Menu, Comment: 目录树驱动器菜单,
+	CallBack: @CallBack.MenuTreeDisk,
+	IconWidth: 24, IconHeight: 24,
+	ChildWidth: 135, Font: @Font.MSBlack.SL16,
+	Items: [
+	{
+		Tag: 0, ChildWidth: 0, Height: 35,
+		Icon: @Icon.Property, Title: 属性, FontColor: @Color.White
+	}
+	]
+}

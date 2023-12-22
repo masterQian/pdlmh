@@ -1,0 +1,27 @@
+{
+	Skin: @Skin.Menu, CallBack: @CallBack.Menu,
+	IconWidth: 0, IconHeight: 0,
+	ChildWidth: 120, Font: @Font.MSBlack.S16,
+	Items: [
+	{
+		Tag: 0, ChildWidth: 0, Height: 35,
+		Title: 添加新项, FontColor: @Color.White
+	},
+	{
+		Tag: 1, ChildWidth: 0, Height: 35,
+		Title: 复制到剪贴板, FontColor: @Color.White
+	},
+	{
+		Tag: 2, ChildWidth: 0, Height: 35,
+		Title: 修改值, FontColor: @Color.White
+	},
+	{
+		Tag: 3, ChildWidth: 0, Height: 35,
+		Title: 清空值, FontColor: @Color.White
+	},
+	{
+		Tag: 4, ChildWidth: 0, Height: 35,
+		Title: 删除项, FontColor: @Color.White
+	}
+	]
+}

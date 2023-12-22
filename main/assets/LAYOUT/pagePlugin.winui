@@ -1,0 +1,13 @@
+{
+	Type: Group, Name: PagePlugin, Comment: 版面3-插件,
+	Left: 5, Top: 100, Width: 435, Height: 400,
+	Skin: @Skin.Group, Visual: false,
+	Children: [
+	{
+		Type: SuperList, Name: PluginList, Comment: 插件列表,
+		Left: 0, Top: 0, Width: 435, Height: 400,
+		HeadHeight: 0, HeadMode: 0, LineMode: 0,
+		Skin: @Skin.SuperList, CallBack: @CallBack.PluginList
+	}
+	]
+}
